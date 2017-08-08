@@ -1,0 +1,69 @@
+<html>    
+    <head>
+        <title>Tictactoe Using TypeScript</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="src/css/tictactoe.css" />
+    </head>
+
+    <body class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Simple Tic-Tac-Toe</h1>
+            </div>
+        </div>
+
+        <div id="target"></div>
+
+        <br/>
+        <div class="panel panel-default" id="footer">
+            <div class="panel-body">
+                <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> @eyeyar03</p>
+            </div>
+        </div>
+
+        <script id="template" type="text/ractive">
+            {{#showScore}}
+                <div class="alert alert-success" role="alert">Awesome! {{currentPlayer}} just scored {{earnedPoints}}!</div>
+            {{/showScore}}
+
+            <div class="row" id="playground">
+                <div class="col-md-8">
+                    <table class="table-bordered">
+                        {{#rows: rowIdx}}
+                                <tr>
+                                    {{#cells: cellIdx}}
+                                        <td on-click='["addValue", this]' class='{{classColor}}'>{{this.value}}</td>
+                                    {{/cells}}
+                                </tr>
+                        {{/rows}}
+                    </table>
+                </div>
+
+                <div class="col-md-4" id="scores">
+                    <button on-click='resetGame'>Reset</button>
+
+                    {{#players}}
+                        {{#playerX}}
+                            <button class="btn btn-{{#turn}}primary{{else}}default{{/turn}}" type="button">
+                                {{name}} <span class="badge">{{score}}</span>
+                            </button>
+                        {{/playerX}}
+
+                        {{#playerO}}
+                            <button class="btn btn-{{#turn}}primary{{else}}default{{/turn}}" type="button">
+                                {{name}} <span class="badge">{{score}}</span>
+                            </button>
+                        {{/playerO}}
+                    {{/players}}
+                </div>
+            </div>
+        </script>
+
+
+
+        <!--dependencies-->
+        <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ractive" type="text/javascript"></script>
+        <script src="src/js/tictactoe.js" type="text/javascript"></script>
+    </body>
+</html>

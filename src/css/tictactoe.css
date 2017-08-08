@@ -1,0 +1,37 @@
+tr {
+    height: 5em;
+}
+
+td {
+    border: .1em solid #ddd;
+    text-align: center;
+    width: 5em;
+}
+
+.panel-body, .alert-success {
+    text-align: center;
+}
+
+.one {
+    background-color: #deeded;
+}
+
+.two {
+    background-color: #badedd;
+}
+
+.three {
+    background-color: #addedd;
+}
+
+.five {
+    background-color: #7eaded;
+}
+
+.eight {
+    background-color: #64a871;
+}
+
+.twelve {
+    background-color: #1a8a55;
+}
